@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForgedAllianceFullscreen", "ForgedAllianceFullscreen.csproj", "{5954A188-4769-4D72-92CE-636CB0B1F4E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForgedAllianceFullscreen.Console", "ForgedAllianceFullscreen.Console\ForgedAllianceFullscreen.Console.csproj", "{5954A188-4769-4D72-92CE-636CB0B1F4E3}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ForgedAllianceFullscreen.Shared", "ForgedAllianceFullscreen.Shared\ForgedAllianceFullscreen.Shared.shproj", "{95E6135F-12A3-4CFC-A803-D8376CAA7103}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForgedAllianceFullscreen.Window", "ForgedAllianceFullscreen.Window\ForgedAllianceFullscreen.Window.csproj", "{B2EBFCE2-B65D-4194-88F6-55064BCBDF0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +19,20 @@ Global
 		{5954A188-4769-4D72-92CE-636CB0B1F4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5954A188-4769-4D72-92CE-636CB0B1F4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5954A188-4769-4D72-92CE-636CB0B1F4E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2EBFCE2-B65D-4194-88F6-55064BCBDF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2EBFCE2-B65D-4194-88F6-55064BCBDF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2EBFCE2-B65D-4194-88F6-55064BCBDF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2EBFCE2-B65D-4194-88F6-55064BCBDF0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4A65D1A-82E3-4E91-BDDA-B9988C0FC301}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ForgedAllianceFullscreen.Shared\ForgedAllianceFullscreen.Shared.projitems*{5954a188-4769-4d72-92ce-636cb0b1f4e3}*SharedItemsImports = 5
+		ForgedAllianceFullscreen.Shared\ForgedAllianceFullscreen.Shared.projitems*{95e6135f-12a3-4cfc-a803-d8376caa7103}*SharedItemsImports = 13
+		ForgedAllianceFullscreen.Shared\ForgedAllianceFullscreen.Shared.projitems*{b2ebfce2-b65d-4194-88f6-55064bcbdf0b}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
