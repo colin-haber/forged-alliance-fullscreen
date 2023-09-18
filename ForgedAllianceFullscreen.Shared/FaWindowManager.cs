@@ -29,8 +29,9 @@ namespace ForgedAllianceFullscreen
 		private readonly int y;
 		private readonly int width;
 		private readonly int height;
+		private readonly bool cpu;
 		private readonly ILogger logger;
-		internal FaWindowManager(int x, int y, int width, int height)
+		internal FaWindowManager(int x, int y, int width, int height, bool cpu)
 		{
 			using var loggerFactory = LoggerFactory.Create(builder =>
 			{
@@ -48,6 +49,7 @@ namespace ForgedAllianceFullscreen
 			this.y = y;
 			this.width = width;
 			this.height = height;
+			this.cpu = cpu;
 		}
 		internal void Run()
 		{
@@ -75,6 +77,13 @@ namespace ForgedAllianceFullscreen
 				if (fullscreenedProcessIds.Add(pid))
 				{
 					logger.LogInformation(@"[{ProcessId}] Detected {ProcessName} process", pid, faProcess.ProcessName);
+					if (cpu && OperatingSystem.IsWindows())
+					{
+						faProcess.ProcessorAffinity = (int)Math.Pow(2, Environment.ProcessorCount) - 2;
+						logger.LogInformation(@"[{ProcessId}] Set process affinity to {ProcessAffinity}", pid, Convert.ToString(faProcess.ProcessorAffinity, 2));
+						faProcess.PriorityClass = ProcessPriorityClass.High;
+						logger.LogInformation(@"[{ProcessId}] Set process priority to {ProcessPriority}", pid, faProcess.PriorityClass.ToString());
+					}
 					SpinWait.SpinUntil(() => faProcess.MainWindowHandle != 0); // Wait for the main window to exist before trying to manipulate it
 					logger.LogInformation(@"[{ProcessId}] Detected main window", pid);
 					SetBorderlessAndResize(pid, faProcess.MainWindowHandle);

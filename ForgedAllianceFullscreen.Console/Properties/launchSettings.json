@@ -2,11 +2,11 @@
   "profiles": {
     "Run": {
       "commandName": "Project",
-      "commandLineArgs": "--width 3840 --height 1080"
+      "commandLineArgs": "--width 3840 --height 1080 --cpu"
     },
     "Watch": {
       "commandName": "Project",
-      "commandLineArgs": "--watch --width 3840 --height 1080"
+      "commandLineArgs": "--watch --width 3840 --height 1080 --cpu"
     }
   }
 }
